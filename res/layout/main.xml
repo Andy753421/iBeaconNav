@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@android:id/tabhost"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<TabWidget
+			android:id="@android:id/tabs"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" />
+		<FrameLayout
+			android:id="@android:id/tabcontent"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			<LinearLayout
+				android:id="@+id/map"
+				android:orientation="vertical"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+				<fragment
+					xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/map_fragment"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:name="com.google.android.gms.maps.MapFragment"/>
+			</LinearLayout>
+			<LinearLayout
+				android:id="@+id/state"
+				android:orientation="vertical"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+				<TextView
+					android:id="@+id/state_text"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:text="State information" />
+			</LinearLayout>
+			<ScrollView
+				android:id="@+id/debug_scroll"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:scrollbars="vertical"
+				android:fillViewport="true">
+				<TextView
+					android:id="@+id/debug"
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent" />
+			</ScrollView>
+		</FrameLayout>
+	</LinearLayout>
+</TabHost>
+<!-- vim: set ts=4 sw=4 sts=4: -->
